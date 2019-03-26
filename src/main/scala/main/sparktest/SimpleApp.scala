@@ -16,10 +16,9 @@ object SimpleApp {
 
     val df = sparkSession
       .read
-      .format("csv")
       .option("header", "true")
       .option("mode", "DROPMALFORMED")
-      .load("/home/kuba_jal/test_data.csv")
+      .csv("/home/kuba_jal/test_data.csv")
 
     val numFLs = df.filter(c => c.get(2) == "FL").count()
     println("Lines with a: %s".format(numFLs))
