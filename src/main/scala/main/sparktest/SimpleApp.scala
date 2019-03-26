@@ -18,7 +18,7 @@ object SimpleApp {
       .read
       .option("header", "true")
       .option("mode", "DROPMALFORMED")
-      .csv("/test_data.csv")
+      .csv("/test-data.csv")
 
     val numFLs = df.filter(c => c.get(2) == "FL").count()
     println("Lines with a: %s".format(numFLs))
