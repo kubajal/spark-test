@@ -20,7 +20,7 @@ object SimpleApp {
       .option("mode", "DROPMALFORMED")
       .csv("/test-data.csv")
 
-    val numFLs = df.filter(c => c("statecode") == "FL").count()
+    val numFLs = df.filter(c => c(1) == "FL").count()
     println("Lines with a: %s".format(numFLs))
   }
 }
